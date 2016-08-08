@@ -250,6 +250,11 @@ typedef struct {
   const XML_Char *uriName;
 } NS_ATT;
 
+#ifdef MOE_WINDOWS
+// MOE: ELEMENT_TYPE name is already taken by an enum in one of Microsoft's headers.
+#define ELEMENT_TYPE EXPAT_ELEMENT_TYPE
+#endif
+
 typedef struct {
   const XML_Char *name;
   PREFIX *prefix;
